@@ -1,0 +1,2 @@
+/opt/ARMToolchain/bin/arm-none-eabi-ar qc libUSB_CLASS_LIBRARY.a  CMakeFiles/USB_CLASS_LIBRARY.dir/usbd_cdc.c.obj CMakeFiles/USB_CLASS_LIBRARY.dir/usbd_cdc_if_template.c.obj
+/opt/ARMToolchain/bin/arm-none-eabi-ranlib libUSB_CLASS_LIBRARY.a
