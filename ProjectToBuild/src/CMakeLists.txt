@@ -1,0 +1,4 @@
+file(GLOB PRJCT_SRC_FILES *.c)
+add_library(PRJCT_LIBRARY ${PRJCT_SRC_FILES})
+
+target_include_directories (PRJCT_LIBRARY PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

@@ -1,0 +1,4 @@
+file(GLOB USB_CORE_SRC_FILES *.c)
+add_library(USB_CORE_LIBRARY ${USB_CORE_SRC_FILES})
+
+target_include_directories (USB_CORE_LIBRARY PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
