@@ -69,7 +69,7 @@ extern uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-  uint8_t buffer[] = "Hello World per USB....";
+
   /* USER CODE END 1 */
   
 
@@ -105,8 +105,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    CDC_Transmit_FS(buffer, sizeof(buffer));
-    HAL_Delay(1000);
+    //CDC_Transmit_FS(buffer, sizeof(buffer));
+    //HAL_Delay(500);
   }
   /* USER CODE END 3 */
 }
@@ -157,7 +157,17 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void CDC_ReceiveCallBack(uint8_t* buf, uint32_t len)
+{
+  uint8_t buffer[] = "Hello World per USB....\n\r";
+  uint8_t bufferEnter[] = "Enter key was pressed....\n\r";
 
+  if(0x0D==buf[0])
+    CDC_Transmit_FS(bufferEnter, sizeof(bufferEnter));
+  else
+    CDC_Transmit_FS(buffer, sizeof(buffer));
+  //CDC_Transmit_FS(buf, len);
+}
 /* USER CODE END 4 */
 
 /**
